@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N Laundry Laundromat App - Performance Built for Laundromats</title>
+  <link rel="icon" type="image/x-icon" href="images/LaundryAppicon.ico">
+  <!-- Google Fonts: Poppins & Roboto matching Lunacy design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== HEADER / NAVBAR ==================== -->
+  <header class="site-header" id="navbar">
+    <div class="header-container">
+      <a href="#home" class="brand-logo" aria-label="N Laundry Home">
+        <img src="images/n_icon.webp" alt="N Laundry Logo" class="brand-icon">
+      </a>
+
+      <!-- Mobile hamburger toggle -->
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#buy" class="nav-link">Buy</a></li>
+          <li><a href="#contacts" class="nav-link">Contacts</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" id="home">
+    <div class="hero-bg-overlay"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="title-main">Performance Built</span><br>
+          <span class="title-sub">for the Laundromat<br>Business</span>
+        </h1>
+        <p class="hero-description">
+          the app built to help with your day to day<br>
+          laundromat Business Activities
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#buy" class="btn btn-pill">
+            <img src="images/n_icon.webp" alt="" class="btn-icon">
+            <span>Buy App</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Fanned Floating App Screens Deck -->
+      <div class="hero-deck-wrapper" aria-hidden="true">
+        <div class="hero-deck">
+          <div class="deck-card card-1"><img src="images/App_Customers.PNG" alt="App Customers screen"></div>
+          <div class="deck-card card-2"><img src="images/APP_Dashboard.PNG" alt="App Dashboard screen"></div>
+          <div class="deck-card card-3"><img src="images/App_Dashboard2.PNG" alt="App Dashboard 2 screen"></div>
+          <div class="deck-card card-4"><img src="images/App_Hub.PNG" alt="App Hub screen"></div>
+          <div class="deck-card card-5"><img src="images/APP_Login.PNG" alt="App Login screen"></div>
+          <div class="deck-card card-6"><img src="images/APP_Services.PNG" alt="App Services screen"></div>
+          <div class="deck-card card-7"><img src="images/APP_Settings.PNG" alt="App Settings screen"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FEATURE SHOWCASES ==================== -->
+  <section class="features-section" id="features">
+    <div class="container">
+
+      <!-- Feature 1: The Hub -->
+      <article class="feature-block">
+        <h2 class="feature-heading">
+          A Hub Designed To enable you reach any part of the when you need to
+        </h2>
+        <div class="feature-mockup-frame">
+          <img src="images/App_Hub.PNG" alt="N Laundry Laundromat App Hub screen showing navigation options" class="mockup-img" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Feature 2: Detailed Dashboard -->
+      <article class="feature-block">
+        <h2 class="feature-heading">
+          A Dashboard with deailed and relevant app data<br>
+          ready for you to use to make the next business decision
+        </h2>
+        <div class="feature-mockup-frame">
+          <img src="images/APP_Dashboard.PNG" alt="N Laundry Dashboard showing Customer and Revenue metrics" class="mockup-img" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Feature 3: Data Dashboard -->
+      <article class="feature-block">
+        <h2 class="feature-heading">
+          the dashboard displays your customer, revenue<br class="hide-mobile"> and service data
+        </h2>
+        <div class="feature-mockup-frame">
+          <img src="images/App_Dashboard2.PNG" alt="N Laundry Dashboard with Revenue and Washing Services overview" class="mockup-img" loading="lazy">
+        </div>
+      </article>
+
+      <!-- Feature 4: Products and Services -->
+      <article class="feature-block">
+        <h2 class="feature-heading">
+          N laundry Laundromat app allows you to create<br class="hide-mobile"> your own products and srvices
+        </h2>
+        <div class="feature-mockup-frame">
+          <img src="images/APP_Services.PNG" alt="N Laundry Services setup and management screen" class="mockup-img" loading="lazy">
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT & VALUE PROPOSITION SECTION ==================== -->
+  <section class="about-section" id="about">
+    <div class="about-bg-overlay"></div>
+    <div class="container about-container">
+      <div class="about-left">
+        <h2 class="about-heading">
+          With N laundry Laundromat app, enhance how you provide your laundromat business to your customers
+        </h2>
+
+        <div class="about-points">
+          <p class="point-item">
+            You have a dashboard with real time AI telemetry data as you doing business with your customers
+          </p>
+          <p class="point-item">
+            Keep track of customers Laundry with custom item numbers
+          </p>
+          <p class="point-item">
+            process payments seamlessly with custom generated reciept data
+          </p>
+          <p class="point-item">
+            Sign up members of staff, to login securely and carry out day to day activities with your customers
+          </p>
+          <p class="point-item point-highlight">
+            these and many more features available
+          </p>
+        </div>
+
+        <div class="about-cta-group">
+          <a href="#buy" class="btn btn-pill">
+            <img src="images/n_icon.webp" alt="" class="btn-icon">
+            <span>Buy App</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="about-right" aria-hidden="true">
+        <div class="hero-deck about-deck">
+          <div class="deck-card card-1"><img src="images/App_Customers.PNG" alt="App Customers preview"></div>
+          <div class="deck-card card-2"><img src="images/APP_Dashboard.PNG" alt="App Dashboard preview"></div>
+          <div class="deck-card card-3"><img src="images/App_Dashboard2.PNG" alt="App Dashboard 2 preview"></div>
+          <div class="deck-card card-4"><img src="images/App_Hub.PNG" alt="App Hub preview"></div>
+          <div class="deck-card card-5"><img src="images/APP_Login.PNG" alt="App Login preview"></div>
+          <div class="deck-card card-6"><img src="images/APP_Services.PNG" alt="App Services preview"></div>
+          <div class="deck-card card-7"><img src="images/APP_Settings.PNG" alt="App Settings preview"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== Buy today Section ==================== -->
+  <section class="trial-section" id="buy">
+    <div class="container trial-container" id="download">
+      <div class="trial-copy">
+        <p class="trial-eyebrow">Start today</p>
+        <h2 class="trial-heading">Run your laundromat with N Laundry</h2>
+        <p class="trial-description">
+          Download the app and explore every essential tool with a seven-day trial.
+        </p>
+        <a href="https://drive.google.com/file/d/1cN32rbM4lcbwXvJZq4-Ppm3JpKDGYE3c/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-pill trial-button" download>
+          <img src="images/n_icon.webp" alt="" class="btn-icon">
+          <span>Download 7-Day Trial</span>
+        </a>
+        <p class="trial-note">No payment required to get started.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER / CONTACTS ==================== -->
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-container">
+      
+      <!-- Brand & CTAs Column -->
+      <div class="footer-col footer-col-brand">
+        <div class="footer-logo-wrap">
+          <img src="images/Laundry_app_logo4.png" alt="N Laundry Laundromat App" class="footer-logo">
+        </div>
+        <p class="footer-tagline">The next System</p>
+        <div class="footer-buttons">
+          <a href="#buy" class="btn btn-pill btn-footer">
+            <img src="images/n_icon.webp" alt="" class="btn-icon">
+            <span>Buy App</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Links Column -->
+      <div class="footer-col footer-col-nav">
+        <ul class="footer-nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+      </div>
+
+      <!-- Ecosystem / Partner Apps Column -->
+      <div class="footer-col footer-col-ecosystem">
+        <h3 class="ecosystem-title">Also try out:</h3>
+        <div class="ecosystem-grid">
+          <a href="https://swsfirm.github.io/OcampaApp/" target="_blank" rel="noopener noreferrer" class="partner-card" title="Ocampa">
+            <img src="images/ocampa.png" alt="Ocampa App">
+          </a>
+          <a href="https://swsfirm.github.io/BAJetApp/" target="_blank" rel="noopener noreferrer" class="partner-card" title="BA Jet">
+            <img src="images/ba_jet.png" alt="BA Jet">
+          </a>
+          <a href="https://swsfirm.github.io/EvolvedApp/" target="_blank" rel="noopener noreferrer" class="partner-card" title="Evolved">
+            <img src="images/evolved.png" alt="Evolved">
+          </a>
+          <a href="https://swsfirm.github.io/A-TroApp/" target="_blank" rel="noopener noreferrer" class="partner-card" title="Atro">
+            <img src="images/atro.png" alt="Atro">
+          </a>
+          <a href="https://swsfirm.github.io/SmobiApp/" target="_blank" rel="noopener noreferrer" class="partner-card" title="Smobi">
+            <img src="images/smobi.png" alt="Smobi">
+          </a>
+          <a href="https://swsfirm.github.io/upm-mobile/" target="_blank" rel="noopener noreferrer" class="partner-card" title="UPM">
+            <img src="images/upm.png" alt="UPM">
+          </a>
+           <a href="https://swsfirm.github.io/upm_desktop/" target="_blank" rel="noopener noreferrer" class="partner-card" title="UPM">
+            <img src="images/upm.png" alt="UPM">
+          </a>
+          <a href="https://www.youtube.com/@reviewsampleszed" target="_blank" rel="noopener noreferrer" class="partner-card yt-card" title="YouTube Channel">
+            <img src="images/YouTube_1.png" alt="YouTube Channel">
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom developer info credit -->
+    <div class="footer-bottom">
+      <p class="developer-credit">
+        Designed Developed By: 
+        <a href="mailto:residenttechnician@gmail.com" class="credit-link">residenttechnician@gmail.com</a>
+        <span class="sep">|</span>
+        <a href="https://wa.me/0977178883" target="_blank" rel="noopener noreferrer" class="credit-link">Whatsapp</a>        
+         <span class="sep">|</span>
+         <a href="https://swsfirm.github.io/my_Uidesign_Portfolio/" class="credit-link">My Ui Design Portfolio</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Navigation script -->
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (navToggle && mainNav) {
+      navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        mainNav.classList.toggle('open');
+      });
+    }
+
+    // Close menu when clicking nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (mainNav.classList.contains('open')) {
+          navToggle.classList.remove('open');
+          mainNav.classList.remove('open');
+        }
+      });
+    });
+
+    // Update active nav link on scroll
+    const sections = document.querySelectorAll('section[id], footer[id]');
+    window.addEventListener('scroll', () => {
+      let scrollY = window.pageYOffset;
+      sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 150;
+        const sectionId = current.getAttribute('id');
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+          document.querySelectorAll('.nav-link').forEach(l => {
+            l.classList.remove('active');
+            if (l.getAttribute('href') === '#' + sectionId) {
+              l.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

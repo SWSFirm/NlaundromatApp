@@ -1,0 +1,985 @@
+/* ==========================================================================
+   N LAUNDRY LAUNDROMAT APP - STYLESHEET
+   Based directly on Lunacy 'Desktop View' UI Design Canvas
+   ========================================================================== */
+
+/* --- CSS Variables --- */
+:root {
+  --bg-main: #F0F0F0;
+  --color-primary: #FDB33B;
+  --color-primary-hover: #f3a623;
+  --color-accent-blue: #34A8FF;
+  --color-text-dark: #000000;
+  --color-text-gray: #575656;
+  --color-text-light: #FFFFFF;
+  --color-border-subtle: rgba(0, 0, 0, 0.08);
+  --font-poppins: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-roboto: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  --container-max-width: 1440px;
+  --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Base & Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-roboto);
+  background-color: var(--bg-main);
+  color: var(--color-text-dark);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 1.35rem;
+  transition: var(--transition-smooth);
+  user-select: none;
+}
+
+.btn-pill {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  border: 3.5px solid var(--color-accent-blue);
+  border-radius: 50px;
+  padding: 16px 36px;
+  min-width: 250px;
+  box-shadow: 0 8px 24px rgba(253, 179, 59, 0.35);
+}
+
+.btn-pill:hover {
+  background-color: var(--color-primary-hover);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(52, 168, 255, 0.35);
+}
+
+.btn-pill:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.btn-icon {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* ==========================================================================
+   HEADER / NAVIGATION
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(240, 240, 240, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 18px 36px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.brand-icon {
+  height: 48px;
+  width: auto;
+}
+
+.main-nav .nav-list {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.nav-link {
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--color-text-dark);
+  position: relative;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--color-accent-blue);
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--color-accent-blue);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: var(--color-text-dark);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 850px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-image: url('images/laundromat_mat.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0 100px 0;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 240, 240, 0.72);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 36px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+.hero-title {
+  font-family: var(--font-poppins);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 4.2vw, 4.4rem);
+  line-height: 1.15;
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+.hero-title .title-main {
+  color: var(--color-text-dark);
+  font-weight: 700;
+}
+
+.hero-title .title-sub {
+  color: var(--color-text-gray);
+  font-weight: 700;
+}
+
+.hero-description {
+  font-family: var(--font-roboto);
+  font-weight: 600;
+  font-size: clamp(1.2rem, 1.8vw, 1.75rem);
+  line-height: 1.4;
+  color: var(--color-text-dark);
+  margin-bottom: 42px;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* --- Fanned Floating Deck (Rounded C-Arc) --- */
+.hero-deck-wrapper {
+  position: relative;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-deck {
+  position: relative;
+  width: 680px;
+  height: 660px;
+  perspective: 1200px;
+}
+
+.deck-card {
+  position: absolute;
+  width: 290px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  background: #ffffff;
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1), box-shadow 0.3s ease;
+  transform-origin: center center;
+}
+
+.deck-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*
+  ROUND C-ARC: arc is short vertically (450px span) and deep horizontally (300px span).
+  Aspect ratio ≈ 1.5:1 → looks like "C", not "<".
+
+  Positions trace the right half of an ellipse:
+    horizontal radius (depth) = 300px
+    vertical   radius (span)  = 230px
+    center of ellipse sits 300px from right edge, 330px from top
+
+  Rotations are tangent angles at each position on the ellipse.
+  Top/bottom tips reach near the right edge; apex extends furthest left.
+*/
+.hero-deck .card-1 {
+  /* Top tip of the C */
+  top: 25px;
+  right: -20px;
+  transform: rotate(23deg);
+  z-index: 1;
+}
+
+.hero-deck .card-2 {
+  top: 105px;
+  right: 120px;
+  transform: rotate(20deg);
+  z-index: 2;
+}
+
+.hero-deck .card-3 {
+  top: 215px;
+  right: 265px;
+  transform: rotate(16deg);
+  z-index: 3;
+}
+
+.hero-deck .card-4 {
+  /* Middle of the C, furthest left */
+  top: 330px;
+  right: 305px;
+  transform: rotate(0deg);
+  z-index: 4;
+}
+
+.hero-deck .card-5 {
+  top: 445px;
+  right: 265px;
+  transform: rotate(-9deg);
+  z-index: 5;
+}
+
+.hero-deck .card-6 {
+  top: 545px;
+  right: 120px;
+  transform: rotate(-9deg);
+  z-index: 6;
+}
+
+.hero-deck .card-7 {
+  /* Bottom tip of the C */
+  top: 620px;
+  right: -20px;
+  transform: rotate(-12deg);
+  z-index: 7;
+}
+
+/* Hover: cards pull outward along the arc */
+.hero-deck:hover .card-1 { transform: translateY(-10px) translateX(14px) rotate(25deg); box-shadow: 0 22px 48px rgba(0,0,0,0.32); }
+.hero-deck:hover .card-2 { transform: translateY(-7px)  translateX(10px) rotate(22deg); box-shadow: 0 22px 48px rgba(0,0,0,0.28); }
+.hero-deck:hover .card-3 { transform: translateY(-3px)  translateX(-5px) rotate(-6deg); box-shadow: 0 22px 48px rgba(0,0,0,0.24); }
+.hero-deck:hover .card-4 { transform: scale(1.06)       translateX(-20px);               box-shadow: 0 26px 52px rgba(0,0,0,0.28); }
+.hero-deck:hover .card-5 { transform: translateY(3px)   translateX(-5px) rotate(6deg);  box-shadow: 0 22px 48px rgba(0,0,0,0.24); }
+.hero-deck:hover .card-6 { transform: translateY(7px)   translateX(10px) rotate(-11deg);  box-shadow: 0 22px 48px rgba(0,0,0,0.28); }
+.hero-deck:hover .card-7 { transform: translateY(10px)  translateX(14px) rotate(-14deg);  box-shadow: 0 22px 48px rgba(0,0,0,0.32); }
+
+/* ==========================================================================
+   FEATURE SHOWCASES
+   ========================================================================== */
+.features-section {
+  padding: 100px 0 60px 0;
+  background-color: var(--bg-main);
+}
+
+.feature-block {
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+.feature-heading {
+  font-family: var(--font-roboto);
+  font-weight: 900;
+  font-size: clamp(1.4rem, 2.2vw, 2.25rem);
+  line-height: 1.35;
+  color: var(--color-text-dark);
+  max-width: 960px;
+  margin: 0 auto 36px auto;
+  padding: 0 16px;
+}
+
+.feature-mockup-frame {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  background: #FFFFFF;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.09);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.feature-mockup-frame:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.14);
+}
+
+.mockup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   ABOUT / VALUE PROPOSITION SECTION
+   ========================================================================== */
+.about-section {
+  position: relative;
+  background-image: url('images/laundromat_mat2.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.about-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 240, 240, 0.82);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+.about-container {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-left {
+  max-width: 760px;
+}
+
+.about-heading {
+  font-family: var(--font-poppins);
+  font-weight: 900;
+  font-size: clamp(1.4rem, 2.3vw, 2.2rem);
+  line-height: 1.35;
+  color: var(--color-text-dark);
+  margin-bottom: 36px;
+}
+
+.about-points {
+  margin-bottom: 44px;
+}
+
+.point-item {
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 1.5vw, 1.45rem);
+  line-height: 1.5;
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 28px;
+}
+
+.point-item::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  top: -2px;
+  color: var(--color-accent-blue);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.point-highlight {
+  font-weight: 900;
+  color: #111111;
+  padding-left: 28px;
+}
+
+.about-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.about-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 550px;
+}
+
+.about-deck {
+  transform: scale(0.95);
+}
+
+/* ==========================================================================
+   TRIAL / DOWNLOAD SECTION
+   ========================================================================== */
+.trial-section {
+  position: relative;
+  overflow: hidden;
+  background-image: linear-gradient(rgba(52, 168, 255, 0.78), rgba(52, 168, 255, 0.78)), url('images/laundromat_mat3.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+}
+
+.trial-section::before {
+  content: '';
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -180px;
+  top: -230px;
+  border: 80px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.trial-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.85fr);
+  align-items: center;
+  gap: 80px;
+}
+
+.trial-copy {
+  max-width: 660px;
+}
+
+.trial-eyebrow {
+  font-family: var(--font-roboto);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.trial-eyebrow {
+  color: var(--color-primary);
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.trial-heading {
+  color: var(--color-text-light);
+  font-family: var(--font-poppins);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.12;
+  margin-bottom: 24px;
+}
+
+.trial-description {
+  color: var(--color-text-light);
+  font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+  line-height: 1.55;
+  max-width: 570px;
+  margin-bottom: 32px;
+}
+
+.trial-button {
+  border-color: var(--color-text-light);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.trial-note {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   FOOTER SECTION
+   ========================================================================== */
+.site-footer {
+  background-color: var(--bg-main);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 80px 0 40px 0;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1.3fr;
+  gap: 60px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+/* Column 1: Brand & Actions */
+.footer-col-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-logo-wrap {
+  margin-bottom: 12px;
+}
+
+.footer-logo {
+  max-width: 320px;
+  height: auto;
+}
+
+.footer-tagline {
+  font-family: var(--font-roboto);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  margin-bottom: 28px;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 340px;
+}
+
+.btn-footer {
+  width: 100%;
+}
+
+/* Column 2: Navigation */
+.footer-col-nav {
+  padding-top: 12px;
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-nav-list a {
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 1.45rem;
+  color: var(--color-text-dark);
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-nav-list a:hover {
+  color: var(--color-accent-blue);
+  transform: translateX(6px);
+}
+
+/* Column 3: Ecosystem / Also try out */
+.footer-col-ecosystem {
+  padding-top: 12px;
+}
+
+.ecosystem-title {
+  font-family: var(--font-roboto);
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: var(--color-text-dark);
+  margin-bottom: 24px;
+}
+
+.ecosystem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  align-items: center;
+}
+
+.partner-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 0;
+  height: 80px;
+  transition: var(--transition-smooth);
+}
+
+.partner-card img {
+  max-height: 52px;
+  max-width: 90%;
+  object-fit: contain;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+}
+
+.partner-card.yt-card {
+  background: transparent;
+}
+
+.partner-card.yt-card img {
+  max-height: 40px;
+}
+
+/* Bottom Developer Credit */
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 36px;
+  text-align: center;
+}
+
+.developer-credit {
+  font-family: var(--font-roboto);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--color-text-dark);
+}
+
+.credit-link {
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  font-weight: 700;
+}
+
+.credit-link:hover {
+  color: var(--color-accent-blue);
+  text-decoration: underline;
+}
+
+.developer-credit .sep {
+  margin: 0 10px;
+  color: #999;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN / MEDIA QUERIES
+   ========================================================================== */
+
+/* Tablets & Small Desktops (<= 1100px) */
+@media (max-width: 1100px) {
+  .hero-container,
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content,
+  .about-left {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .hero-cta-group,
+  .about-cta-group {
+    justify-content: center;
+  }
+
+  .hero-deck-wrapper,
+  .about-right {
+    height: 580px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .hero-deck {
+    width: 500px;
+    height: 540px;
+    transform: scale(0.92);
+    transform-origin: top center;
+  }
+
+  .hero-deck .card-1 { top: 20px;  right: 0;   transform: rotate(-52deg); }
+  .hero-deck .card-2 { top: 85px;  right: 100px; transform: rotate(-38deg); }
+  .hero-deck .card-3 { top: 170px; right: 185px; transform: rotate(-20deg); }
+  .hero-deck .card-4 { top: 270px; right: 220px; transform: rotate(0deg); }
+  .hero-deck .card-5 { top: 370px; right: 185px; transform: rotate(20deg); }
+  .hero-deck .card-6 { top: 455px; right: 100px; transform: rotate(38deg); }
+  .hero-deck .card-7 { top: 520px; right: 0;   transform: rotate(52deg); }
+
+  .point-item {
+    text-align: left;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-col-ecosystem {
+    grid-column: span 2;
+  }
+}
+
+/* Tablets (<= 850px) */
+@media (max-width: 850px) {
+  .trial-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .trial-copy {
+    margin: 0 auto;
+  }
+
+  .trial-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-container {
+    padding: 16px 24px;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #F0F0F0;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+  }
+
+  .main-nav.open {
+    max-height: 320px;
+  }
+
+  .main-nav .nav-list {
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-col-brand {
+    align-items: center;
+  }
+
+  .footer-buttons {
+    margin: 0 auto;
+  }
+
+  .footer-nav-list {
+    align-items: center;
+  }
+
+  .footer-nav-list a:hover {
+    transform: none;
+  }
+
+  .ecosystem-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/* Mobile Phones (<= 520px) */
+@media (max-width: 520px) {
+  .trial-section {
+    padding: 72px 0;
+  }
+
+  .btn-pill {
+    width: 100%;
+    min-width: unset;
+    font-size: 1.15rem;
+    padding: 14px 24px;
+  }
+
+  .hero-section {
+    padding: 40px 0 60px 0;
+  }
+
+  .hero-deck-wrapper,
+  .about-right {
+    height: 480px;
+    justify-content: center;
+  }
+
+  .hero-deck {
+    width: 310px;
+    height: 455px;
+    transform: scale(0.82);
+    transform-origin: center center;
+  }
+
+  .deck-card {
+    width: 210px;
+  }
+
+  .hero-deck .card-1 { top: 5px;   right: -5px; transform: rotate(-40deg); }
+  .hero-deck .card-2 { top: 60px;  right: 48px; transform: rotate(-27deg); }
+  .hero-deck .card-3 { top: 120px; right: 95px; transform: rotate(-13deg); }
+  .hero-deck .card-4 { top: 185px; right: 115px; transform: rotate(0deg); }
+  .hero-deck .card-5 { top: 250px; right: 95px; transform: rotate(13deg); }
+  .hero-deck .card-6 { top: 315px; right: 48px; transform: rotate(27deg); }
+  .hero-deck .card-7 { top: 370px; right: -5px; transform: rotate(40deg); }
+
+  .feature-block {
+    margin-bottom: 70px;
+  }
+
+  .feature-mockup-frame {
+    border-radius: 12px;
+  }
+
+  .ecosystem-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .developer-credit {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .developer-credit .sep {
+    display: block;
+    height: 0;
+    margin: 0;
+    visibility: hidden;
+  }
+}
